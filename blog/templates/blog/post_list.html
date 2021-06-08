@@ -7,19 +7,14 @@
 <body>
     <h1> A very nice heading</h1>
 
-    <article>
-        <h2> Another heading</h2>
-        <p> Some lovely text </p>
-        <time> published: 14.06.2014, 12:14 </time>
-    </article>
+    {% for post in posts%}
+        <article>
+            <h2><a href=""> {{ post.title }}</a></h2>
+            <p> {{post.text|linebreaksbr}} </p>
+            <time>published: {{post.published_date}}</time>
+        </article>
+    {% endfor %}
 
-    <article>
-        <h2> Yet Another heading</h2>
-        <p> Aenean eu leo quam. Pellentesque ornare sem lacinia quam
-            venenatis vestibulum. Donec id elit non mi porta gravida at eget metus.
-            Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh,
-            ut fermentum massa justo sit amet risus </p>
-        <time> published: 14.06.2014, 12:14 </time>
-    </article>
+
 </body>
 </html>
